@@ -19,7 +19,7 @@
 
 ## 🌐 Live Demo
 
-### 🚀 **[Try EchoWrite Live →](https://your-app-name.onrender.com)**
+### 🚀 **[Try EchoWrite Live →](https://echowrite-fm1v.onrender.com)**
 
 > **Note:** Hosted on Render's free tier. First request may take 30-60 seconds to wake up.
 
