@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/transcribe")
+@RequestMapping("/api")   //  FIXED → must match frontend "/api"
 @CrossOrigin(origins = "*")
 public class TranscriptionController {
 
@@ -22,9 +22,10 @@ public class TranscriptionController {
 
     private static final String GROQ_API_URL = "https://api.groq.com/openai/v1/audio/transcriptions";
 
-    @PostMapping
+    @PostMapping("/transcribe")   // Correct endpoint
     public ResponseEntity<String> transcribeAudio(
-            @RequestParam("file") MultipartFile file) throws IOException {
+            @RequestParam("audio") MultipartFile file   //  UPDATED: must match React "audio"
+    ) throws IOException {
 
         // Prepare headers
         HttpHeaders headers = new HttpHeaders();
@@ -50,7 +51,7 @@ public class TranscriptionController {
         return new ResponseEntity<>(transcription, HttpStatus.OK);
     }
 
-    // Helper class for multipart file upload
+    // Helper class
     static class MultipartInputStreamFileResource extends ByteArrayResource {
         private final String filename;
 
